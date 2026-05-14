@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box; /*padding込みで100%にする（全体的に)*/
+}
+
+body {
+  margin: 0; /*ブラウザのデフォルトの余白を消すため使った方がいいらしい*/
+  font-family: sans-serif;
+  text-align: center; /*ページ全体のテキストを中央揃えにする*/
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(163, 195, 224);
+    position: fixed; /*画面の上に固定して、横いっぱいに広げる*/
+    top: 0;  /*上から0の位置に配置する（いちばん上）*/
+    align-items: center;
+    color: white;
+    padding: 5px 10px;
+    /*position: fixed;*/
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    color:white;
+    font-weight:bold;
+    font-size: x-large;
+}
+
+.menu {
+  display: none; /*まず隠す*/
+  position: absolute; /*親要素を基準に、自由な位置に配置する*/
+  top: 30px;  /* ←ヘッダーの下に出す */
+  right: 40px;
+  /*padding: 10px;
+  /*border-radius: 8px; /*角を丸める*/
+  background: rgb(163, 195, 224);
+  /*width: 200px; /*横幅を決める*/
+  min-width: 150px;
+ }
+
+.menu.active {  /*開いた状態*/
+  display: flex; /*要素を横や縦に並べて表示*/
+  flex-direction: column;  /*縦メニューにする*/
+  gap: 10px;
+  background-color: rgba(88, 121, 151, 0.5); /*最後の数字は透明度*/
+  justify-content:center;
+  align-items: stretch; /*高さを揃えて広げる,親の高さに合わせて、子要素が同じ高さになる*/
+}
+
+
+.menu-btn {
+  font-size: 24px;
+  cursor: pointer; /*マウスを乗せたとき手の形（クリックできる表示）にする*/
+  position: relative; /*自分を基準に位置調整する*/
+  z-index: 2000; /*他の要素より前面に出す*/
+  color: rgb(255, 255, 255);
+}
+
+.menu a:hover {
+  background-color: rgb(71, 114, 152);
+}
+
+.menu a:first-child{
+  padding-left: 0px; /*aタグの最初のものだけにスペースを適用 いらなくなったので削除*/
+}
+
+.menu a {
+    color:white;
+    /*margin-left: 0px; /*外側の余白*/
+    /*margin: auto;*/
+    text-decoration: none;
+    display: block; /*1行を丸ごと使って表示する*/
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+}
+
+.serch {
+    padding:30px;
+    margin-top: 40px;
+}
+
+/*.wrap {
+  display: flex;
+  align-items: stretch; /*子要素の高さを自動で揃える
+  gap: 10px; /* 間隔 */
+  /*align-items: flex-start; /* 上揃え 
+}*/
+
+.getserch {
+    padding:10px;
+    flex: 1; /* 横幅残り全部使う */
+    border: 1px solid grey;
+    /*box-shadow: 1px 1px 2px;*/
+    margin: 20px;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+.countserch {
+    display: flex;            /* 親指定 */
+    align-items: center;      /* 縦中央 */
+    justify-content: center;  /* 横中央（任意） */
+    min-width: 80px;
+    font-weight: bold;
+    padding:10px;
+    border: 1px solid grey;
+    /*box-shadow: 1px 1px 2px;*/
+    margin: 20px;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+}
+
+.btbtbt {
+  background: linear-gradient(#6fa2ee, #6796dd);
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  box-shadow: 0 4px 0 #577bb2;
+  transition: 0.3s;
+  border-radius: 10px; /*角を丸める*/
+
+}
+
+.btbtbt:hover {
+ opacity: 0.8; /*透明度*/
+ transform: translateY(-0px); 
+}
+
+.btbtbt:active {
+  background: linear-gradient(#547cb8, #4c6fa3);
+  transform: translateY(0.5px) scale(0.995); /*少し下に動いて、少し縮む（押した感じ）*/
+  box-shadow: 0 4px 0 #686b69; /*下に1pxのくっきり影をつける*/
+}
+
+.card {
+  /*display:grid; /*要素を1行まるごと使う表示にする（横いっぱい＋前後で改行）*/
+  /*float: left;*/
+  /*flex-direction: row;*/
+  color: inherit; /*親要素と同じ色を使う*/
+  text-align: center; /*テキストを中央に*/
+  border: 1px solid grey;
+  padding: 10px 10px;
+  transition: 0.5s;
+  text-decoration:none;
+  /*max-width: 200px; /*横の最大幅*/
+  width:100%; /*親要素の横いっぱいに広がる*　　←消す　スペースが余ると左寄りに見えてしまうから */
+  border-radius: 10px; /*角を丸く*/
+  box-shadow: 2px 2px 6px #ddd; /*カードの質感アップ*/
+}
+
+.card img {
+  width: 100%;
+  height: auto; /*高さを内容に合わせて自動調整する*/
+  border-radius: 6px; /*画像を少し丸める*/
+  aspect-ratio: 4 / 3; /*縦横の比率を固定する（4:3の形にする）比率を固定して形を保つ*/
+  object-fit: cover; /*トリミングして枠にぴったり収める*/
+}
+
+.card:hover {
+    background-color: rgb(240, 229, 244);
+    box-shadow: 5px 5px 5px #cbcbcb; 
+    transform: translateY(-5px);  /*上に5px動かす*/
+    opacity: 0.7;
+}
+
+.mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 0 20px;
+}
+
+#resultArea {
+ list-style: none;  /* ・を消す */
+ padding: 0;  /* 左の余白も消す */
+ margin: 0;
+}
+
+.card2 {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding:12px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 6px #eee;
+  background: #fff;
+}
+
+.card2:hover {
+  transform: translateY(-2px);
+  transition: 0.1s;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.hobby {
+  font-size: 14px;
+  color: #555;
+}

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
- <html>
- <head>
- <meta charset="UTF-8">
- <title>模写サイト</title>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ページタイトル</title>
+</head>
+<body>
 
- <link rel="stylesheet" href="style.css">
-
- </head>
-
- <body>
- <header>
+<header>
  <div class="logo">My Site</div>
  <div class="menu-btn">☰</div>
 
@@ -18,17 +17,31 @@
    <a href="#">About</a>
    <a href="#">contact</a>
     </nav>
-
  </header>
 
- <main>
- <section class="cards">
+<div class ="serch">
+<input id="ageInput" type="number" placeholder="年齢を入れる">
+<input id="hobbyinput" type="text" placeholder="趣味を入れる">
+
+<button id="filterBtn">表示する</button>
+<button id="btnreset" class="btbtbt">リセット</button>
+</div>
+
+<div class = "wrap">
+  <div class ="countserch" id ="count"></div>
+  <div class ="getserch">  
+   <ul id="resultArea"></ul>
+  </div>
+</div>
+
+
+<section class="mini">
     <a href="https://www.yahoo.co.jp/" class="card">
      <img src="https://picsum.photos/200">
      <p>サービス1</p>
     </a>
  
-    <a href="https://www.yahoo.co.jp/" class="card-link">
+    <a href="https://www.yahoo.co.jp/" class="card">
      <img src="https://picsum.photos/200">
      <p>サービス1a</p>
     </a>
@@ -45,46 +58,11 @@
  </section>
 
 
- <div class="abc">aaa</div>
- <div class="abc">aaa</div>
- <div class="abc">aaa</div>
-
-    <section class="mini2">
-     <button class="btn">テスト１</button>
-     <button class="btn">テスト２</button>
-     <button class="btn">テスト３</button>
-   </section>
-
-   <section class="mini2">
-      <div class="card2">
-       <img src="https://picsum.photos/200">
-       <p>さーびすA</p>
-     </div>
-
-      <div class="card2">
-       <img src="https://picsum.photos/200">
-       <p>サービスB</p>
-      </div>
-
-      <div class="card2">
-       <img src="https://picsum.photos/200">
-       <p>さーびすC</p>
-      </div>
-
-      <div class="card2">
-       <img src="https://picsum.photos/200">
-       <p>サービスD</p>
-      </div>
-   </section>
 
 
- </main>
-   <footer>
-   <p>© 2026 My Site</p>
-   </footer>
 
- <script src="script.js">
 
-</script>
- </body>
- </html>
+<script src="script.js"></script>
+
+</body>
+</html>
